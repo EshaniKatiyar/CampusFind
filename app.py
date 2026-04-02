@@ -5,7 +5,10 @@ from mysql.connector import Error
 from config import DB_CONFIG
 
 app = Flask(__name__, static_folder='static', template_folder='templates')
-CORS(app)
+CORS(app, origins=[
+    'http://localhost:5000',
+    'https://eshanikatiyar.github.io'
+])
 
 
 def get_db():
